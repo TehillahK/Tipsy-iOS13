@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var zeroPercentTipBtn: UIButton!
@@ -25,6 +25,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult"{
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.answer = budgetLogic.answer
+            destinationVC.numPeople = "\(budgetLogic.numPeople)"
+            destinationVC.tip = "\(budgetLogic.tip * 100)%"
+        }
     }
 
     @IBAction func tipButtonPressed(_ sender: UIButton) {
@@ -45,7 +54,7 @@ class ViewController: UIViewController {
         
         sender.isSelected = true
         
-        let percentValStr: String = sender.titleLabel?.text ?? "0"
+        let percentValStr: String = sender.titleLabel?.text ?? "0%"
         //percentVal
         
         let discount = Float(percentValStr[..<percentValStr.index(before: percentValStr.endIndex)])!/100.0
@@ -72,10 +81,12 @@ class ViewController: UIViewController {
         
         let answer = budgetLogic.calcSplit(value: value, numPeople: numPeople)
         
-        print(answer)
+        self.performSegue(withIdentifier: "goToResult", sender: self)
         
         
     }
+    
+    
     
     
 }

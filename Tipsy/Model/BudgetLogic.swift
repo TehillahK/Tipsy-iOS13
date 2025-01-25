@@ -13,12 +13,16 @@ struct BudgetLogic {
    // var budget: Budget? = nil
     
     var tip: Float = 0.0
+    var numPeople: Int = 0
+    var answer: Float = 0.0
     
     
-    func calcSplit(value: Float, numPeople: Int)->Float{
+    mutating func calcSplit(value: Float, numPeople: Int)->Float{
         
        // let budget = Budget(value: value, tip: tip, people: numPeople)
+        self.numPeople = numPeople
         
+        self.answer =  (value + (value * tip))/Float(numPeople)
         return (value + (value * tip))/Float(numPeople)
     }
     
