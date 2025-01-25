@@ -10,13 +10,22 @@ import Foundation
 
 
 struct BudgetLogic {
-    let budget: Budget? = nil
+   // var budget: Budget? = nil
+    
+    var tip: Float = 0.0
     
     
-    func calcSplit(value: Float, tip:Float, numPeople: Int)->Float{
+    func calcSplit(value: Float, numPeople: Int)->Float{
         
-        let budget = Budget(value: value, tip: tip, people: numPeople)
+       // let budget = Budget(value: value, tip: tip, people: numPeople)
         
-        return (budget.value + (budget.value * budget.tip))/Float(budget.people)
+        return (value + (value * tip))/Float(numPeople)
     }
+    
+    
+    mutating func setTip(_ tip: Float){
+        self.tip = tip
+    }
+    
+    
 }

@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var splitLabel: UILabel!
     
+    var budgetLogic = BudgetLogic()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,6 +44,14 @@ class ViewController: UIViewController {
         }
         
         sender.isSelected = true
+        
+        let percentValStr: String = sender.titleLabel?.text ?? "0"
+        //percentVal
+        
+        let discount = Float(percentValStr[..<percentValStr.index(before: percentValStr.endIndex)])!/100.0
+        
+        budgetLogic.setTip(discount)
+        
        // sender.tintColor = UIColor(red: 0.0, green: 176.0/255.0, blue: 107.0/255.9, alpha: 1.0)
     }
     
@@ -51,11 +61,18 @@ class ViewController: UIViewController {
         
         let numPeopleStr = String(format: "%.0f",sender.value)
         
+        
         splitLabel.text = numPeopleStr
         
     }
     
     @IBAction func calcBtnPressed(_ sender: UIButton) {
+        let numPeople = Int(splitLabel.text!)!
+        let value = Float(textField.text!)!
+        
+        let answer = budgetLogic.calcSplit(value: value, numPeople: numPeople)
+        
+        print(answer)
         
         
     }

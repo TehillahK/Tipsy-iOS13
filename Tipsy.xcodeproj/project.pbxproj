@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1537704E2D439807002C0912 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1537704D2D439807002C0912 /* Budget.swift */; };
 		153770512D439881002C0912 /* BudgetLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153770502D439881002C0912 /* BudgetLogic.swift */; };
 		ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689522326708D006D4E2B /* AppDelegate.swift */; };
 		ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689542326708D006D4E2B /* SceneDelegate.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1537704D2D439807002C0912 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		153770502D439881002C0912 /* BudgetLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetLogic.swift; sourceTree = "<group>"; };
 		ADB6894F2326708D006D4E2B /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB689522326708D006D4E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +42,6 @@
 		1537704F2D43980F002C0912 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1537704D2D439807002C0912 /* Budget.swift */,
 				153770502D439881002C0912 /* BudgetLogic.swift */,
 			);
 			path = Model;
@@ -162,7 +159,6 @@
 			files = (
 				ADB689572326708D006D4E2B /* ViewController.swift in Sources */,
 				ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */,
-				1537704E2D439807002C0912 /* Budget.swift in Sources */,
 				153770512D439881002C0912 /* BudgetLogic.swift in Sources */,
 				ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */,
 			);
